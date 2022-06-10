@@ -7,12 +7,12 @@ ADD go.mod .
 ADD go.sum .
 RUN go mod download
 
-ADD main ./main
+ADD cmd ./cmd
 ADD configs ./configs
 ADD internal ./internal
 
 RUN go version
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o case-2 main/*
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o case2 cmd/case2/*
 
 ADD init ./init
 
@@ -21,7 +21,7 @@ RUN apk add ca-certificates curl bash alpine-sdk
 
 WORKDIR /app
 
-COPY --from=builder /go/src/app/case-2 .
+COPY --from=builder /go/src/app/case2 .
 COPY --from=builder /go/src/app/init /app/init
 
-ENTRYPOINT ["./сase-2"]
+ENTRYPOINT ["./case2"]

@@ -4,7 +4,7 @@ export
 
 PROJECT_PATH=`pwd`
 PROJECT_NAME=backend
-MAIN_FILE_PATH=main/main.go
+MAIN_FILE_PATH=cmd/case2/main.go
 
 ## run: Запускает приложение в дебаг режиме (с флагом -race)
 run:
@@ -21,13 +21,13 @@ reinstall:
 
 ## container-build: Запускает docker build
 container-build:
-	@docker build -t extension-backend:latest .
+	@docker build -t case2:latest .
 
 ## container-run: Запускает контейнер (без docker build). Для docker build используйте container-build
 container-run:
-	@(docker stop extension-backend || true)
-	@(docker rm extension-backend || true)
-	@docker run --name extension-backend -p 8001:8001 --env-file init/.env extension-backend
+	@(docker stop case2 || true)
+	@(docker rm case2 || true)
+	@docker run --name case2 -p 8001:8001 --env-file init/.env case2
 
 ## postgres-run: Поднимает локальный постгрес в docker контейнере
 postgres-run:
