@@ -4,7 +4,7 @@ export
 
 PROJECT_PATH=`pwd`
 PROJECT_NAME=backend
-MAIN_FILE_PATH=main.go
+MAIN_FILE_PATH=main/main.go
 
 ## run: Запускает приложение в дебаг режиме (с флагом -race)
 run:
@@ -34,7 +34,6 @@ postgres-run:
 	@(docker stop postgres || true)
 	@(docker rm postgres || true)
 	@(docker run -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=jaIiw21aSA --name postgres -p 5432:5432 -v "`pwd`/sql:/docker-entrypoint-initdb.d" -d postgres || true)
-	@#(docker run -e POSTGRES_PASSWORD=jaIiw21aSA -e POSTGRES_USER=admin --name postgres -p 5432:5432 -v "`pwd`/sql:/docker-entrypoint-initdb.d" -d postgres || true)
 
 ## compose-up: Поднимает зависимости и приложение
 compose-up:
