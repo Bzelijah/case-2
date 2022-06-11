@@ -14,6 +14,10 @@ export const Support = () => {
 				</div>
 				<img src={volonters} alt='' />
 			</div>
+			<div className='buttons-container'>
+				<S.StyledButton>Стать волонтером</S.StyledButton>
+				<S.StyledButton dark={true}>Стать партнером</S.StyledButton>
+			</div>
 		</S.Support>
 	);
 };
