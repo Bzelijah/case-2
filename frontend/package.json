@@ -5,8 +5,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "webpack",
 		"start": "webpack serve",
-		"lint": "npx eslint assets/",
-		"lint:fix": "npx eslint --fix assets/",
+		"lint": "npx eslint",
+		"lint:fix": "npx eslint --fix",
 		"precommit": "lint-staged"
 	},
 	"author": "",
