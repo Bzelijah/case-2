@@ -1,16 +1,16 @@
 CREATE TABLE tasks (
     id                  SERIAL,
     created_at          timestamp       DEFAULT CURRENT_TIMESTAMP,
-    company_name         text            DEFAULT '',
+    company_name        text            DEFAULT '',
     sphere              text            DEFAULT '',
-    vacancy_name         text            DEFAULT '',
+    vacancy_name        text            DEFAULT '',
     tasks               text ARRAY      DEFAULT ARRAY[''],
     skills              text ARRAY      DEFAULT ARRAY[''],
     conditions          text ARRAY      DEFAULT ARRAY[''],
     motivation          text ARRAY      DEFAULT ARRAY[''],
     email               text            DEFAULT '',
-    min_age              int             DEFAULT 0,
-    max_age              int             DEFAULT 0
+    min_age             int             DEFAULT 0,
+    max_age             int             DEFAULT 0
 );
 
 CREATE TABLE users (
