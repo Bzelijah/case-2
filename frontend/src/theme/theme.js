@@ -1,5 +1,6 @@
 export const colors = {
 	transparent: 'rgba(0, 0, 0, 0)',
 	white: '#FFFFFF',
-	lightPink: '#F7EFFA'
+	lightPink: '#F7EFFA',
+	aqua: '#59D9BA'
 };
