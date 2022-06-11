@@ -6,6 +6,7 @@ import (
 	"github.com/Bzelijah/case-2/internal/logger"
 	"github.com/Bzelijah/case-2/internal/pg"
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"os"
 	"os/signal"
 	"syscall"
@@ -25,11 +26,14 @@ func New(
 	}
 	newServer.echoServer.HideBanner = true
 	newServer.echoServer.HidePort = true
+	newServer.echoServer.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{configs.FRONTEND_ORIGIN},
+	}))
 	return newServer
 }
 
 func (s *server) Init() {
-	//s.echoServer.GET("/event", s.event)
+	s.echoServer.POST("/create", s.create)
 	s.echoServer.GET("*", s.notFound)
 }
 
