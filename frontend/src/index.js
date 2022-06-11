@@ -4,6 +4,6 @@ import 'core-js/stable';
 
 import './models/init';
 import Main from './components/Main';
-// import './fonts/fonts.css';
+import './fonts/fonts.css';
 
 ReactDOM.render(<Main />, document.getElementById('root'));
