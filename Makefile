@@ -27,7 +27,7 @@ container-build:
 container-run:
 	@(docker stop case2 || true)
 	@(docker rm case2 || true)
-	@docker run --network=db_connect --name case2 -p 8001:8001 --env-file init/.env case2
+	@docker run --network=db_connect --name case2 -p 8001:8001 --env-file init/.env -d case2
 
 ## postgres-run: Поднимает локальный постгрес в docker контейнере
 postgres-run:
