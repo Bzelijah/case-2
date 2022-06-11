@@ -18,5 +18,7 @@ func main() {
 	}
 
 	serv := server.New(pgDto)
+	serv.Init()
+
 	panic(serv.Run())
 }
