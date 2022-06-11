@@ -15,9 +15,7 @@ module.exports = {
 		hot: true,
 		port: 8081,
 		proxy: {
-			'/api': 'http://10.4.18.160',
-			'/upload': 'http://10.4.18.160',
-			'/map-s3': 'http://10.4.18.160',
+			'/api': 'http://localhost:8081'
 		}
 	},
 	output: {
