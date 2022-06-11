@@ -3,8 +3,8 @@ include init/.env
 export
 
 PROJECT_PATH=`pwd`
-PROJECT_NAME=backend
-MAIN_FILE_PATH=main/main.go
+PROJECT_NAME=case-2
+MAIN_FILE_PATH=cmd/case2/main.go
 
 ## run: Запускает приложение в дебаг режиме (с флагом -race)
 run:
@@ -21,19 +21,23 @@ reinstall:
 
 ## container-build: Запускает docker build
 container-build:
-	@docker build -t extension-backend:latest .
+	@docker build -t case2:latest .
 
 ## container-run: Запускает контейнер (без docker build). Для docker build используйте container-build
 container-run:
-	@(docker stop extension-backend || true)
-	@(docker rm extension-backend || true)
-	@docker run --name extension-backend -p 8001:8001 --env-file init/.env extension-backend
+	@(docker stop case2 || true)
+	@(docker rm case2 || true)
+	@docker run --network=db_connect --name case2 -p 8001:8001 --env-file init/.env -d case2
 
 ## postgres-run: Поднимает локальный постгрес в docker контейнере
 postgres-run:
 	@(docker stop postgres || true)
 	@(docker rm postgres || true)
-	@(docker run -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=jaIiw21aSA --name postgres -p 5432:5432 -v "`pwd`/sql:/docker-entrypoint-initdb.d" -d postgres || true)
+	@(docker run --network=db_connect -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=jaIiw21aSA --name postgres -p 5432:5432 -v "`pwd`/sql:/docker-entrypoint-initdb.d" -d postgres || true)
+
+## container-network: создаёт нетворк для связи приложением с БД
+container-network:
+	@(docker network create db_connect)
 
 ## compose-up: Поднимает зависимости и приложение
 compose-up:
