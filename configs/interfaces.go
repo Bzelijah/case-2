@@ -7,6 +7,7 @@ type IEnv struct {
 }
 
 type Task struct {
+	Id          int
 	CompanyName string   `json:"companyName" db:"company_name"`
 	Sphere      string   `json:"sphere" db:"sphere"`
 	VacancyName string   `json:"vacancyName" db:"vacancy_name"`
