@@ -34,6 +34,7 @@ func New(
 
 func (s *server) Init() {
 	s.echoServer.POST("/create", s.create)
+	s.echoServer.GET("/tasks", s.tasks)
 	s.echoServer.GET("*", s.notFound)
 }
 
