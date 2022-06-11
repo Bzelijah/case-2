@@ -2,6 +2,7 @@ package pg
 
 import (
 	"github.com/Bzelijah/case-2/configs"
+	"github.com/lib/pq"
 )
 
 func (d *Dto) GetTasks() ([]configs.Task, error) {
@@ -13,7 +14,7 @@ func (d *Dto) GetTasks() ([]configs.Task, error) {
 			vacancy_name,
 			tasks,
 			skills,
-			confitions,
+			conditions,
 			motivation,
 			email,
 			min_age,
@@ -27,8 +28,8 @@ func (d *Dto) GetTasks() ([]configs.Task, error) {
 	for rows.Next() {
 		var task configs.Task
 		err := rows.Scan(&task.Id, &task.CompanyName, &task.Sphere,
-			&task.VacancyName, &task.Tasks, &task.Skills,
-			&task.Conditions, &task.Motivation, &task.Email,
+			&task.VacancyName, pq.Array(&task.Tasks), pq.Array(&task.Skills),
+			pq.Array(&task.Conditions), pq.Array(&task.Motivation), &task.Email,
 			&task.MinAge, &task.MaxAge,
 		)
 		if err != nil {

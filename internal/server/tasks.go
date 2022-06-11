@@ -11,7 +11,7 @@ import (
 func (s *server) tasks(c echo.Context) error {
 	filter := c.QueryParam("filter")
 	fmt.Println("filter", filter)
-	if filter == "false" {
+	if filter == "false" || filter == "" {
 		tasks, err := s.pgDto.GetTasks()
 		if err != nil {
 			logger.Error(CTX).Err(err).Msg("error while get all tasks")
