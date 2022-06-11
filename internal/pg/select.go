@@ -24,6 +24,7 @@ func (d *Dto) GetTasks() ([]configs.Task, error) {
 	if err != nil {
 		return []configs.Task{}, err
 	}
+
 	var tasks []configs.Task
 	for rows.Next() {
 		var task configs.Task
@@ -35,6 +36,7 @@ func (d *Dto) GetTasks() ([]configs.Task, error) {
 		if err != nil {
 			return tasks, err
 		}
+
 		tasks = append(tasks, task)
 	}
 	if len(tasks) == 0 {
