@@ -28,6 +28,11 @@ func New(
 	return newServer
 }
 
+func (s *server) Init() {
+	//s.echoServer.GET("/event", s.event)
+	s.echoServer.GET("*", s.notFound)
+}
+
 func (s *server) Run() error {
 	logger.Info(CTX).Msgf("Server started on port %s", configs.PORT)
 	s.listenForSignals()
