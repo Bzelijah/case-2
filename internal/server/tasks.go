@@ -11,7 +11,6 @@ import (
 )
 
 func (s *server) tasks(c echo.Context) error {
-	fmt.Println(getFilterSettings(c.QueryParams()))
 	filter := c.QueryParam("filter")
 	if filter == "false" || filter == "" {
 		tasks, err := s.getTasksWithoutFilter()
@@ -22,6 +21,9 @@ func (s *server) tasks(c echo.Context) error {
 
 		return c.Blob(fasthttp.StatusOK, "application/json", configs.JSONMarshal(tasks))
 	}
+
+	filterSettings := getFilterSettings(c.QueryParams())
+	fmt.Println(filterSettings)
 
 	return c.NoContent(fasthttp.StatusOK)
 }
@@ -44,8 +46,15 @@ func (s *server) getTasksWithFilter() ([]configs.Task, error) {
 
 func getFilterSettings(queryParams url.Values) configs.FilterSettings {
 	var settings configs.FilterSettings
-	//if queryParams[max]
-	//fmt.Println(queryParams)
+	if len(queryParams["minAge"]) != 0 {
+		settings.MinAge = queryParams["minAge"][0]
+	}
+	if len(queryParams["maxAge"]) != 0 {
+		settings.MaxAge = queryParams["maxAge"][0]
+	}
+	if len(queryParams["sphere"]) != 0 {
+		settings.Sphere = queryParams["sphere"][0]
+	}
 
 	return settings
 }
