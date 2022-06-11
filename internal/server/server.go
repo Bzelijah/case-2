@@ -29,7 +29,7 @@ func New(
 }
 
 func (s *server) Init() {
-	//s.echoServer.GET("/event", s.event)
+	s.echoServer.POST("/create", s.create)
 	s.echoServer.GET("*", s.notFound)
 }
 

@@ -1,18 +1,16 @@
 CREATE TABLE tasks (
     id                  SERIAL,
     created_at          timestamp       DEFAULT CURRENT_TIMESTAMP,
-    companyName         text            DEFAULT '',
+    company_name         text            DEFAULT '',
     sphere              text            DEFAULT '',
-    vacancyName         text            DEFAULT '',
-    name                text            DEFAULT '',
-    conditions          text            DEFAULT '',
+    vacancy_name         text            DEFAULT '',
     tasks               text ARRAY      DEFAULT ARRAY[''],
-    info                text ARRAY      DEFAULT ARRAY[''],
-    salary              text            DEFAULT '',
     skills              text ARRAY      DEFAULT ARRAY[''],
+    conditions          text ARRAY      DEFAULT ARRAY[''],
+    motivation          text ARRAY      DEFAULT ARRAY[''],
     email               text            DEFAULT '',
-    age                 int             DEFAULT 0,
-    date                timestamp
+    min_age              int             DEFAULT 0,
+    max_age              int             DEFAULT 0
 );
 
 CREATE TABLE users (
@@ -26,4 +24,8 @@ CREATE TABLE users (
     password            text            DEFAULT '',
     work                text            DEFAULT '',
     englishLevel        text            DEFAULT ''
-)
+);
+
+INSERT INTO tasks (company_name, sphere, vacancy_name, tasks, skills, conditions, motivation, email, min_age, max_age) VALUES
+    ('someCompany', 'айти', 'супер-кодер', '{"быть крутым", "умным"}', '{"писать код", "писать много кода"}', '{"дадим чёткий комп для работы", "мега-офис"}', '{"благодарственные письма", "космический корабль"}', 'supermilo@skinhead.rus', 19, 24),
+    ('anotherCompany', 'общепит', 'шаурмен', '{"волосатые руки", "армянский акцент"}', '{"любить кошек"}', '{"большая печка", "шаурмечка в центре москвы"}', '{"мясо", "воздушные шарики"}', 'megatip@dildax.conch', 30, 0);
