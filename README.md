@@ -10,3 +10,7 @@
 6. docker run --name front -p 8081:8081 -d front 
 
 Шестой пункт запустит контейнер в бэкграунде, чтобы увидеть логи, нужно убрать флаг -d
+
+Остановить и удалить контейнер:
+    docker rm -f [CONTAINER ID]
+    docker container prune
