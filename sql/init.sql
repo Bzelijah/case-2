@@ -7,7 +7,7 @@ CREATE TABLE tasks (
     tasks               text ARRAY      DEFAULT ARRAY[''],
     skills              text ARRAY      DEFAULT ARRAY[''],
     conditions          text ARRAY      DEFAULT ARRAY[''],
-    rewards             text ARRAY      DEFAULT ARRAY[''],
+    motivation          text ARRAY      DEFAULT ARRAY[''],
     email               text            DEFAULT '',
     min_age              int             DEFAULT 0,
     max_age              int             DEFAULT 0
@@ -26,6 +26,6 @@ CREATE TABLE users (
     englishLevel        text            DEFAULT ''
 );
 
-INSERT INTO tasks (company_name, sphere, vacancy_name, tasks, skills, conditions, rewards, email, min_age, max_age) VALUES
+INSERT INTO tasks (company_name, sphere, vacancy_name, tasks, skills, motivation, rewards, email, min_age, max_age) VALUES
     ('someCompany', 'айти', 'супер-кодер', '{"быть крутым", "умным"}', '{"писать код", "писать много кода"}', '{"дадим чёткий комп для работы", "мега-офис"}', '{"благодарственные письма", "космический корабль"}', 'supermilo@skinhead.rus', 19, 24),
     ('anotherCompany', 'общепит', 'шаурмен', '{"волосатые руки", "армянский акцент"}', '{"любить кошек"}', '{"большая печка", "шаурмечка в центре москвы"}', '{"мясо", "воздушные шарики"}', 'megatip@dildax.conch', 30, 0);

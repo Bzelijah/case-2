@@ -17,7 +17,7 @@ type task struct {
 	Tasks       []string `json:"tasks" db:"tasks"`
 	Skills      []string `json:"skills" db:"skills"`
 	Conditions  []string `json:"conditions" db:"conditions"`
-	Rewards     []string `json:"rewards" db:"rewards"`
+	Motivation  []string `json:"motivation" db:"motivation"`
 	Email       []string `json:"email" db:"email"`
 	MinAge      int      `json:"minAge" db:"min_age"`
 	MaxAge      int      `json:"maxAge" db:"max_age"`
