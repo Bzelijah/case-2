@@ -19,3 +19,9 @@ type Task struct {
 	MinAge      int      `json:"minAge" db:"min_age"`
 	MaxAge      int      `json:"maxAge" db:"max_age"`
 }
+
+type FilterSettings struct {
+	MinAge string
+	MaxAge string
+	Sphere string
+}
