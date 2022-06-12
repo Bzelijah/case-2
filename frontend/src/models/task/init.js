@@ -14,20 +14,16 @@ function sleep(ms) {
 	});
 }
 
-fetchTasksFx.use(async () => {
-	const data = axios.get('http://localhost:8001/tasks?filter=false');
-	return data;
-});
+fetchTasksFx.use(async () => axios.get('http://localhost:8001/tasks?filter=false'));
 
 forward({
 	from: fetchTasks,
 	to: fetchTasksFx
 });
 
-$tasksData.on(fetchTasksFx.doneData, (_, data) => {
-	// номрализация
-	sleep(5000);
-	console.log(data, 'data');
+$tasksData.on(fetchTasksFx.doneData, (_, rawData) => {
+	// sleep(5000);
+	const { data } = rawData;
 	return data;
 });
 

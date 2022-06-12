@@ -40,6 +40,7 @@ export const MenuButton = styled(Button)`
 	text-transform: uppercase;
 	font-size: 20px;
 	font-family: 'Rubik Medium';
+    color: ${({ theme }) => theme.purple};
 `;
 
 export const StyledButton = styled(Button)`
