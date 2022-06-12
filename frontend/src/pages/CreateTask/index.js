@@ -12,7 +12,9 @@ export const CreateTaskPage = () => {
 		event.preventDefault();
 		createTask({
 			companyName: event.target.companyName.value,
-			email: event.target.email.value
+			email: event.target.email.value,
+			sphere: event.target.sphere.value,
+			age: event.target.age.value,
 		});
 	};
 
@@ -64,19 +66,19 @@ export const CreateTaskPage = () => {
 						Направление
 					</S.Label>
 					<S.Checkbox>
-						<input type={'radio'} name={'type'} id={'sport'} value={'sport'} />
+						<input type={'radio'} name={'sphere'} id={'sport'} value={'Спортивная'} />
 						<label htmlFor={'sport'}>Спортивная</label>
 					</S.Checkbox>
 					<S.Checkbox>
-						<input type={'radio'} name={'type'} id={'social'} value={'social'} />
+						<input type={'radio'} name={'sphere'} id={'social'} value={'Социальная'} />
 						<label htmlFor={'social'}>Социальная</label>
 					</S.Checkbox>
 					<S.Checkbox>
-						<input type={'radio'} name={'type'} id={'culture'} value={'culture'} />
+						<input type={'radio'} name={'sphere'} id={'culture'} value={'Культурная'} />
 						<label htmlFor={'culture'}>Культурная</label>
 					</S.Checkbox>
 					<S.Checkbox>
-						<input type={'radio'} name={'type'} id={'sphere-different'} value={'sphere-different'} />
+						<input type={'radio'} name={'sphere'} id={'sphere-different'} value={'Другое'} />
 						<label htmlFor={'sphere-different'}>Другое</label>
 					</S.Checkbox>
 					<S.Textarea placeholder={'Тип направления  волонтерской деятельности'} type={'text'} name={'sphere'} />
