@@ -1,12 +1,13 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import volonters from '../../../assets/volonters.svg';
 
 import * as S from './styles';
-import {useHistory} from 'react-router-dom';
 
 export const Support = () => {
 	const goToCreateTaskPage = useHistory();
+	const history = useHistory();
 	return (
 		<S.Support>
 			<div className='container'>
@@ -17,8 +18,8 @@ export const Support = () => {
 				<img src={volonters} alt='' />
 			</div>
 			<div className='buttons-container'>
-				<S.StyledButton>Стать волонтером</S.StyledButton>
-				<S.StyledButton dark={true} onClick={() => goToCreateTaskPage.push('/create')}>Стать партнером</S.StyledButton>
+				<S.StyledButton onClick={() => history.push('/search')}>Хочу помочь</S.StyledButton>
+				<S.StyledButton dark={true} onClick={() => goToCreateTaskPage.push('/create')}>Нужна помощь</S.StyledButton>
 			</div>
 		</S.Support>
 	);

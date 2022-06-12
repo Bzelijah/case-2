@@ -43,6 +43,7 @@ export const StyledButton = styled(Button)`
 	color: ${({ theme }) => theme.white};
 	background-color: ${({ theme }) => theme.green};
 	border: ${({ theme }) => `6px solid ${theme.green}`};
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
 
 	padding: 30px 35px;
 	font-size: 25px;

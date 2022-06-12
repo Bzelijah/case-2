@@ -5,6 +5,7 @@ import { Facts } from '../../components/HomePage/Facts';
 import { Support } from '../../components/HomePage/Support';
 import { Histories } from '../../components/HomePage/Histories';
 import { SearchBar } from '../../components/common/SearchBar';
+import { Partners } from '../../components/HomePage/Partners';
 
 export const Home = () => {
 	return (
@@ -14,6 +15,7 @@ export const Home = () => {
 			<Facts />
 			<Support />
 			<Histories />
+			<Partners />
 		</>
 	);
 };
