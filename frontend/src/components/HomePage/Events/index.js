@@ -23,7 +23,7 @@ export const Events = () => {
 			{loading ?
 				<Loader />
 				:
-
+				data &&
 				<S.Events>
 					<div className='title'>все события и мероприятия</div>
 					<S.CardsContainer>
