@@ -1,10 +1,12 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import volonters from '../../../assets/volonters.svg';
 
 import * as S from './styles';
 
 export const Support = () => {
+	const history = useHistory();
 	return (
 		<S.Support>
 			<div className='container'>
@@ -15,8 +17,8 @@ export const Support = () => {
 				<img src={volonters} alt='' />
 			</div>
 			<div className='buttons-container'>
-				<S.StyledButton>Стать волонтером</S.StyledButton>
-				<S.StyledButton dark={true}>Стать партнером</S.StyledButton>
+				<S.StyledButton onClick={() => history.push('/search')}>Хочу помочь</S.StyledButton>
+				<S.StyledButton dark={true}>Нужна помощь</S.StyledButton>
 			</div>
 		</S.Support>
 	);
