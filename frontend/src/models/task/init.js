@@ -14,7 +14,7 @@ function sleep(ms) {
 	});
 }
 
-fetchTasksFx.use(async () => axios.get('http://localhost:8001/tasks?filter=false'));
+fetchTasksFx.use(async () => axios.get('http://localhost:8001/api/tasks?filter=false'));
 
 forward({
 	from: fetchTasks,
