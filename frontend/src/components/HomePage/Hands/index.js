@@ -6,7 +6,7 @@ import * as S from './styles';
 
 export const Hands = () => {
 	return (
-		<S.Hands style={{ backgroundImage: `url(${hands})` }}>
+		<S.Hands hoverImage={hands}>
 			<div className='title'>Вместе мы можем многое</div>
 			<div className='buttons-container'>
 				<S.StyledButton>Стать волонтером</S.StyledButton>

@@ -21,7 +21,7 @@ export const Content = styled.div`
   .title {
     text-transform: uppercase;
     font-size: 24px;
-    font-family: 'Rubik Medium', self;
+    font-family: 'Rubik Medium';
   }
   
   .promoter {
