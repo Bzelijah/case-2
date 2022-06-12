@@ -15,7 +15,6 @@ export const Events = () => {
 
 	const history = useHistory();
 	const { data, loading } = useStore($tasks);
-
 	useEffect(() => fetchTasks(), []);
 
 	return (
@@ -32,8 +31,8 @@ export const Events = () => {
 								<img src={test} alt='' />
 								<div className='content'>
 									<div>
-										<div className='title'>Уборка территории питомника ЮАО</div>
-										<div className='summary'>Помощь в уборке частного питомника на юге Москвы</div>
+										<div className='title'>{el.companyName}</div>
+										<div className='summary'>{el.vacancyName}</div>
 									</div>
 									<div>
 										<div className='location'>
