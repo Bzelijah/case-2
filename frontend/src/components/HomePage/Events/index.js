@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useStore } from 'effector-react';
+import { useHistory } from 'react-router-dom';
 
 import { Loader } from '../../common/Loader';
 
@@ -12,6 +13,7 @@ import geolocation from '../../../assets/geolocation.svg';
 
 export const Events = () => {
 
+	const history = useHistory();
 	const { data, loading } = useStore($tasks);
 
 	useEffect(() => fetchTasks(), []);
@@ -21,7 +23,7 @@ export const Events = () => {
 			{loading ?
 				<Loader />
 				:
-				data &&
+
 				<S.Events>
 					<div className='title'>все события и мероприятия</div>
 					<S.CardsContainer>
@@ -47,6 +49,7 @@ export const Events = () => {
 							</S.Card>
 						)}
 					</S.CardsContainer>
+					<S.BigButton onClick={() => history.push('/search')}>Просмотреть все</S.BigButton>
 				</S.Events>
 			}
 		</>

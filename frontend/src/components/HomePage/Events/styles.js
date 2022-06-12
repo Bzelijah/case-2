@@ -107,3 +107,12 @@ export const StyledButton = styled(Button)`
 
 	font-size: 14px;
 `;
+
+export const BigButton = styled(Button)`
+	background-color: ${({ theme }) => theme.green};
+	color: ${({ theme }) => theme.white};
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+
+	margin-top: 40px;
+	padding: 30px;
+`;
