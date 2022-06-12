@@ -21,7 +21,7 @@ export const filters = [
 			},
 			{
 				id: 'senior',
-				value: '35-55',
+				value: '36-55',
 				checked: false,
 				disable: false
 			},
@@ -29,7 +29,7 @@ export const filters = [
 				id: 'maestro',
 				value: '55+',
 				checked: false,
-				disable: false
+				disable: true
 			},
 		],
 	},
@@ -39,14 +39,20 @@ export const filters = [
 		icon: sphere,
 		values: [
 			{
-				id: 'eda',
-				value: 'общепит',
+				id: 'social',
+				value: 'Социальное волонтерство',
 				checked: false,
 				disable: false
 			},
 			{
-				id: 'it',
-				value: 'айти',
+				id: 'eco',
+				value: 'Экологическое волонтерство',
+				checked: false,
+				disable: false
+			},
+			{
+				id: 'culture',
+				value: 'Культурное волонтерство',
 				checked: false,
 				disable: false
 			},
