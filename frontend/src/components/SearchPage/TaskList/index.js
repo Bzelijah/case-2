@@ -15,7 +15,7 @@ export const TaskList = () => {
 	useEffect(() => fetchTasks(), []);
 
 	const {data: tasksData, loading} = useStore($tasks);
-
+	console.log(tasksData, 'hehehehehehehhohohohohoh');
 	if (!tasksData || loading) {
 		return (
 			<Loader />

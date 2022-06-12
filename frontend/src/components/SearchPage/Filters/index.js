@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
-import { useStore } from 'effector-react';
+import { Filter } from './Filter';
 
-import {SearchBlock} from './SearchBlock';
+import { getFilterId } from '../../../entities/filter/getters';
+
+import { filters } from '../../../entities/filter';
 
 import * as S from './styles';
 
 
-export const Filters = () => {
-
-	return (
-		<S.Filters >
-			<SearchBlock />
-			<div>Filters!!!</div>
-		</S.Filters>
-	);
-};
+export const Filters = () => (
+	<S.Root >
+		{filters.map(filter => (
+			<Filter key={getFilterId(filter)} filter={filter} />
+		))}
+	</S.Root>
+);
