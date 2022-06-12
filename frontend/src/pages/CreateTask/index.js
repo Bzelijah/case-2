@@ -1,14 +1,25 @@
 import React from 'react';
 
+import { createTask } from '../../models/createTask';
+
 import * as S from './styles';
 
 import attach from '../../assets/attach.svg';
 
 export const CreateTaskPage = () => {
+
+	const handleSumbit = (event) => {
+		event.preventDefault();
+		createTask({
+			companyName: event.target.companyName.value,
+			email: event.target.email.value
+		});
+	};
+
 	return (
 		<S.CreateTaskPage>
 			<S.Title>Анкета для оформления волонтерской деятельности</S.Title>
-			<form>
+			<form onSubmit={handleSumbit}>
 				<S.Step>
 					<div className='step'>ШАГ 1</div>
 					<div className='step-title'>ПЕРСОНАЛЬНЫЕ ДАННЫЕ</div>
@@ -142,7 +153,7 @@ export const CreateTaskPage = () => {
 					</S.DownloadButton>
 					<S.Summary>Вы можете добавить до 10 файлов PNG, PDF, JPEG, JPG, BMP, DOC, DOCX, RTF, XLS, XLSX, TXT, размер одного — до 5 МБ.</S.Summary>
 				</S.Step>
-				<S.ConfirmButton>Отправить заявку</S.ConfirmButton>
+				<S.ConfirmButton type='submit'>Отправить заявку</S.ConfirmButton>
 			</form>
 		</S.CreateTaskPage >
 	);
