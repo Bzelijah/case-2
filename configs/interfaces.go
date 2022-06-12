@@ -16,12 +16,10 @@ type Task struct {
 	Conditions  []string `json:"conditions" db:"conditions"`
 	Motivation  []string `json:"motivation" db:"motivation"`
 	Email       string   `json:"email" db:"email"`
-	MinAge      int      `json:"minAge" db:"min_age"`
-	MaxAge      int      `json:"maxAge" db:"max_age"`
+	Age         string   `json:"age" db:"age"`
 }
 
 type FilterSettings struct {
-	MinAge string
-	MaxAge string
+	Age    string
 	Sphere string
 }
