@@ -22,4 +22,5 @@ type Task struct {
 type FilterSettings struct {
 	Age    string
 	Sphere string
+	Enable string
 }

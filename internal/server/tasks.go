@@ -10,8 +10,8 @@ import (
 )
 
 func (s *server) tasks(c echo.Context) error {
-	filter := c.QueryParam("filter")
-	if filter == "false" || filter == "" {
+	filterSettings := getFilterSettings(c.QueryParams())
+	if filterSettings.Enable == "false" || (filterSettings.Sphere == "" && filterSettings.Age == "") {
 		tasks, err := s.getTasksWithoutFilter()
 		if err != nil {
 			logger.Error(CTX).Err(err).Msg("error while get all tasks")
@@ -21,7 +21,6 @@ func (s *server) tasks(c echo.Context) error {
 		return c.Blob(fasthttp.StatusOK, "application/json", configs.JSONMarshal(tasks))
 	}
 
-	filterSettings := getFilterSettings(c.QueryParams())
 	tasks, err := s.getTasksWithFilter(filterSettings)
 	if err != nil {
 		logger.Error(CTX).Err(err).Msg("error while get all tasks")
@@ -60,12 +59,17 @@ func getFilterSettings(queryParams url.Values) configs.FilterSettings {
 	if len(queryParams["age"]) != 0 {
 		filterSettings.Age = queryParams["age"][0]
 	} else {
-		filterSettings.Age = "0"
+		filterSettings.Age = ""
 	}
 	if len(queryParams["sphere"]) != 0 {
 		filterSettings.Sphere = queryParams["sphere"][0]
 	} else {
 		filterSettings.Sphere = ""
+	}
+	if len(queryParams["filter"]) != 0 {
+		filterSettings.Enable = queryParams["filter"][0]
+	} else {
+		filterSettings.Enable = "false"
 	}
 
 	return filterSettings
