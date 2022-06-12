@@ -4,7 +4,7 @@ import { Button } from '../common/Button/styles';
 
 export const Wrapper = styled.div`
 	width: 100%;
-	padding: 72px 48px 36px;
+	padding: 36px 48px;
 	background-color: ${({ theme }) => theme.lightPink};
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
 
@@ -13,8 +13,11 @@ export const Wrapper = styled.div`
 
 	display: flex;
 	justify-content: space-between;
+    align-items: center;
 
-	.buttons-container {
+    z-index: 1;
+
+	.buttonsContainer {
 		display: flex;
 
 		& > button {
@@ -22,7 +25,7 @@ export const Wrapper = styled.div`
 		}
 	}
 
-	.right-container {
+	.rightContainer {
 		display: flex;
 		align-items: flex-start;
 
