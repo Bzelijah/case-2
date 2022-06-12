@@ -21,6 +21,7 @@ export const TaskCard = ({data}) => {
 	};
 	const {
 		companyName,
+		age,
 		// array
 		conditions,
 		email,
@@ -32,7 +33,7 @@ export const TaskCard = ({data}) => {
 		tasks,
 		vacancyName,
 	} = data;
-	console.log(data,'data');
+
 	return (
 		<S.Root>
 			<div className="imageContainer" >
@@ -47,7 +48,7 @@ export const TaskCard = ({data}) => {
 					)}
 				</div>
 				<span className="dateAndTime">Дата и время помощи: 10 мая в 13:00</span>
-				<span className="level">Уровень волонтера: 4/10</span>
+				<span className="level">Возраст волонтера: {age}</span>
 				<div className="controls">
 					<img onClick={openMap} className='logo' src={geolocation} alt='geolocation' />
 					<S.StyledButton>хочу участвовать</S.StyledButton>

@@ -1,0 +1,1 @@
+export const getFilterId = (filter) => filter?.id || null;
