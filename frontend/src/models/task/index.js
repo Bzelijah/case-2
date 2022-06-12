@@ -9,6 +9,6 @@ export const $tasksData = createStore(null);
 
 // чтобы в компоненте юзать напрмире import {useStore} from 'effector-react' const {data, loading: boolean} = useStore($tasks)
 export const $tasks = combine({
-    data: $tasksData,
-    loading: fetchTasksFx.pending
+	data: $tasksData,
+	loading: fetchTasksFx.pending
 });

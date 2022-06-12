@@ -4,15 +4,15 @@ import { Button } from '../../../components/common/Button/styles';
 
 export const Hands = styled.div`
 	max-width: 1440px;
-  height: 780px;
-
+  	height: 780px;
+	
 	background-image: ${({ hoverImage }) => `url(${hoverImage})`};
 
-  margin-right: auto;
-  margin-left: auto;
+	margin-right: auto;
+	margin-left: auto;
 
-  background-position: center center;
-  background-size: cover;
+  	background-position: center center;
+  	background-size: cover;
 
 	padding: 100px 0 76px;
 

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { SearchBar } from '../../components/HomePage/SearchBar';
 import { Hands } from '../../components/HomePage/Hands';
 import { Facts } from '../../components/HomePage/Facts';
 import { Support } from '../../components/HomePage/Support';
 import { Histories } from '../../components/HomePage/Histories';
+import { SearchBar } from '../../components/common/SearchBar';
 
 export const Home = () => {
 	return (

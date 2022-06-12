@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import * as S from './styles';
 
@@ -8,9 +9,10 @@ import hamburger from '../../assets/hamburger.svg';
 
 
 export const Header = () => {
+	const redirectToHome = useHistory();
 	return (
 		<S.Wrapper>
-			<img className='logo' src={logo} alt='' />
+			<img onClick={() => redirectToHome.push('/')} className='logo' src={logo} alt='' />
 			<div className='buttons-container'>
 				<S.MenuButton>о нас</S.MenuButton>
 				<S.MenuButton>волонтерам</S.MenuButton>
