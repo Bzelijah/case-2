@@ -4,7 +4,7 @@ import axios from 'axios';
 import { createTask, createTaskFx } from '.';
 
 createTaskFx.use(async (form) =>
-	await axios.post('улица пушкина дом колотушкина', form),
+	await axios.post('http://localhost:8001/api/create', form),
 );
 
 forward({

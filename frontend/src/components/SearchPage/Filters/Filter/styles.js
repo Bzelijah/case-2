@@ -50,7 +50,7 @@ export const Root = styled.div`
       font-family: 'Rubik';
       font-size: 15px;
 
-      color: ${({ theme }) => theme.darkGrey};
+      color: ${({ theme }) => theme.realDarkGrey};
     }
   }
 `;

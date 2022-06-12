@@ -10,15 +10,6 @@ MAIN_FILE_PATH=cmd/case2/main.go
 run:
 	@bash -c "go run -race $(MAIN_FILE_PATH)"
 
-## install: Устанавливает зависимости из go.mod файла
-install:
-	@bash -c "go mod download"
-
-## reinstall: Перекачиват и обновляет все зависимости до последней версии
-reinstall:
-	@rm -f go.sum
-	@bash -c "make install"
-
 ## container-build: Запускает docker build
 container-build:
 	@docker build -t case2:latest .
@@ -38,15 +29,6 @@ postgres-run:
 ## container-network: создаёт нетворк для связи приложением с БД
 container-network:
 	@(docker network create db_connect)
-
-## compose-up: Поднимает зависимости и приложение
-compose-up:
-	@(docker-compose up -d)
-
-## compose-down: Останавливает все поднятые ранее контейнеры
-compose-down:
-	@(docker-compose down)
-
 
 help: Makefile
 	@echo " > Список команд по "$(PROJECT_NAME)":"

@@ -41,7 +41,7 @@ export const TaskCard = ({data}) => {
 			</div>
 			<S.Content>
 				<span className="title">{vacancyName}</span>
-				<span className="promoter">ориганизатор: {companyName}</span>
+				<span className="promoter">организатор: {companyName}</span>
 				<div className="taskDescription">
 					{tasks && tasks.map((task, index) => (
 						<span key={index}>{task} </span>)

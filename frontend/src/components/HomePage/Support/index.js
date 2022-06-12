@@ -6,6 +6,7 @@ import volonters from '../../../assets/volonters.svg';
 import * as S from './styles';
 
 export const Support = () => {
+	const goToCreateTaskPage = useHistory();
 	const history = useHistory();
 	return (
 		<S.Support>
@@ -18,7 +19,7 @@ export const Support = () => {
 			</div>
 			<div className='buttons-container'>
 				<S.StyledButton onClick={() => history.push('/search')}>Хочу помочь</S.StyledButton>
-				<S.StyledButton dark={true}>Нужна помощь</S.StyledButton>
+				<S.StyledButton dark={true} onClick={() => goToCreateTaskPage.push('/create')}>Нужна помощь</S.StyledButton>
 			</div>
 		</S.Support>
 	);
