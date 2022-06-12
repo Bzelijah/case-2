@@ -6,6 +6,7 @@ import { Support } from '../../components/HomePage/Support';
 import { Histories } from '../../components/HomePage/Histories';
 import { SearchBar } from '../../components/common/SearchBar';
 import { Partners } from '../../components/HomePage/Partners';
+import { Events } from '../../components/HomePage/Events';
 
 export const Home = () => {
 	return (
@@ -14,6 +15,7 @@ export const Home = () => {
 			<Hands />
 			<Facts />
 			<Support />
+			<Events />
 			<Histories />
 			<Partners />
 		</>
