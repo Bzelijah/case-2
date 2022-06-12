@@ -63,7 +63,7 @@ func (d *Dto) GetTasksWithFilters(filterSettings configs.FilterSettings) ([]conf
 			age
 		FROM tasks
 		WHERE age='%s'`, filterSettings.Age)
-	} else {
+	} else if filterSettings.Sphere != "" && filterSettings.Age != "" {
 		query = fmt.Sprintf(`
 		SELECT
 		    id,
@@ -78,6 +78,21 @@ func (d *Dto) GetTasksWithFilters(filterSettings configs.FilterSettings) ([]conf
 			age
 		FROM tasks
 		WHERE sphere='%s' AND age='%s'`, filterSettings.Sphere, filterSettings.Age)
+	} else {
+		query = fmt.Sprintf(`
+		SELECT
+		    id,
+			company_name,
+			sphere,
+			vacancy_name,
+			tasks,
+			skills,
+			conditions,
+			motivation,
+			email,
+			age
+		FROM tasks
+		WHERE sphere='%s'`, filterSettings.Sphere)
 	}
 
 	rows, err := d.Connect.Query(query)
