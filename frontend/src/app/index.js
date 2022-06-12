@@ -16,6 +16,7 @@ import { Search } from '../pages/Search';
 // components
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
+import { CreateTaskPage } from '../pages/CreateTask';
 
 // features
 import ScrollToTop from './ScrollToTop';
@@ -29,6 +30,7 @@ const Routing = withRouter(function Routing({ match }) {
 		<Switch>
 			<Route exact path={`${match.url}`} component={Home} />
 			<Route exact path={`${match.url}search`} component={Search} />
+			<Route exact path={`${match.url}create`} component={CreateTaskPage} />
 			<Redirect from={''} to={'/'} />
 		</Switch>
 	);

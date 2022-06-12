@@ -3,8 +3,10 @@ import React from 'react';
 import volonters from '../../../assets/volonters.svg';
 
 import * as S from './styles';
+import {useHistory} from 'react-router-dom';
 
 export const Support = () => {
+	const goToCreateTaskPage = useHistory();
 	return (
 		<S.Support>
 			<div className='container'>
@@ -16,7 +18,7 @@ export const Support = () => {
 			</div>
 			<div className='buttons-container'>
 				<S.StyledButton>Стать волонтером</S.StyledButton>
-				<S.StyledButton dark={true}>Стать партнером</S.StyledButton>
+				<S.StyledButton dark={true} onClick={() => goToCreateTaskPage.push('/create')}>Стать партнером</S.StyledButton>
 			</div>
 		</S.Support>
 	);
