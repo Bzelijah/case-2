@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import * as S from './styles';
 
@@ -7,11 +8,12 @@ import vk from '../../../assets/vk.svg';
 import telegram from '../../../assets/telegram.svg';
 
 export const SearchBar = () => {
+	const goToSearchPage = useHistory();
 	return (
 		<S.Wrapper>
 			<S.SearchInput>
 				<input type='text' placeholder='Найдите мероприятие или проект' />
-				<img src={search} alt='' />
+				<img onClick={() => goToSearchPage.push('/search')} src={search} alt='search-icon' />
 			</S.SearchInput>
 			<S.Phone>
 				<div>Горячая линия по вопросам</div>

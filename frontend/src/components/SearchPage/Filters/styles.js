@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Filters = styled.div`
+export const Root = styled.div`
   max-width: 345px;
   
   padding: 30px 38px 30px 12px;
