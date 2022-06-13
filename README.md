@@ -9,13 +9,13 @@
 1. docker build -t front .
 2. docker run --name front -p 8081:8081 -d front
 
-Шестой пункт запустит контейнер в бэкграунде, чтобы увидеть логи, нужно убрать флаг -d
+## Реализованный функционал
+- Кнопка `Хочу помочь`
+- Фильтры на `/search`
+- Кнопка `Нужна помощь`
+- Создание объявления
 
-Остановить и удалить контейнер:
-docker rm -f [CONTAINER ID]
-docker container prune
-
-## Swagger api documentation
+### Swagger api documentation
 https://app.swaggerhub.com/apis/ARI46/case2/0.0.1
 
 ### РАЗНОРАБОТЧИКИ
