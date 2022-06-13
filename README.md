@@ -8,6 +8,7 @@
 ### Выполняем из frontend папки
 1. docker build -t front .
 2. docker run --name front -p 8081:8081 -d front
+3. Дальше открываем http://localhost:8081/
 
 ## Реализованный функционал
 - Кнопка `Хочу помочь`
