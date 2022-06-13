@@ -30,7 +30,7 @@ export const CardsContainer = styled.div`
 	padding-bottom: 20px;
 
 	& > div:not(:last-child) {
-		margin-right: 20px;
+		margin: 0 20px;
 	}
 `;
 
