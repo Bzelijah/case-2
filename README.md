@@ -10,7 +10,10 @@
 2. docker run --name front -p 8081:8081 -d front
 
 ## Реализованный функционал
-- фыв
+- Кнопка `Хочу помочь`
+- Фильтры на `/search`
+- Кнопка `Нужна помощь`
+- Создание объявления
 
 ### Swagger api documentation
 https://app.swaggerhub.com/apis/ARI46/case2/0.0.1
