@@ -50,7 +50,10 @@ export const TaskCard = ({data}) => {
 				<span className="dateAndTime">Дата и время помощи: 10 мая в 13:00</span>
 				<span className="level">Возраст волонтера: {age}</span>
 				<div className="controls">
-					<img onClick={openMap} className='logo' src={geolocation} alt='geolocation' />
+					<div className='location'>
+						<img src={geolocation} alt='geolocation' />
+						<div>Коломенский проезд д.24</div>
+					</div>
 					<S.StyledButton>хочу участвовать</S.StyledButton>
 				</div>
 			</S.Content>

@@ -16,6 +16,10 @@ export const Wrapper = styled.div`
     align-items: center;
 
     z-index: 1;
+  
+    .logoContainer {
+      cursor: pointer;
+    }
 
 	.buttonsContainer {
 		display: flex;

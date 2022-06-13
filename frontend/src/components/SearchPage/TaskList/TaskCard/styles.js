@@ -74,7 +74,23 @@ export const Content = styled.div`
     justify-content: space-between;
     align-items: center;
     
-    margin-top: 12px
+    margin-top: 12px;
+	  
+	.location {
+		display: flex;
+		align-items: center;
+
+		color: ${({ theme }) => theme.black};
+
+		font-size: 14px;
+		line-height: 22px;
+
+		font-family: 'Rubik Medium';
+
+		img {
+			margin-right: 14px;
+		}
+	}
   }
 `;
 
