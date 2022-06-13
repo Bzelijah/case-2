@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useStore } from 'effector-react';
+import { useHistory } from 'react-router-dom';
 
-import { createTask } from '../../models/createTask';
+import { $doneCreateTask, createTask, resetDoneStore } from '../../models/createTask';
 
 import * as S from './styles';
 
 import attach from '../../assets/attach.svg';
 
 export const CreateTaskPage = () => {
+
+	const history = useHistory();
+	const done = useStore($doneCreateTask);
 
 	const handleSumbit = (event) => {
 		event.preventDefault();
@@ -17,6 +22,13 @@ export const CreateTaskPage = () => {
 			age: event.target.age.value,
 		});
 	};
+
+	useEffect(() => {
+		if (done) {
+			history.push('/');
+			resetDoneStore();
+		}
+	}, [done]);
 
 	return (
 		<S.CreateTaskPage>
